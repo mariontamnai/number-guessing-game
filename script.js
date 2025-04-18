@@ -1,4 +1,4 @@
-let secretNumber = Math.floor(Math.ramdom() * 100) + 1;
+let secretNumber = Math.floor(Math.random() * 100) + 1;
 let attempts = 0;
 
 function checkGuess() {
@@ -30,4 +30,9 @@ function resetGame() {
     document.getElementById("message").textContent = "";
     document.getElementById("attempts").textContent = "Attempts: 0";
     document.getElementById("guess").value = "";
+}
+
+function revealNumber() {
+    document.getElementById("secret").textContent = `🤫 The secret number is: ${secretNumber}`;
+    document.getElementById("secret").style.color = "blue";
 }
