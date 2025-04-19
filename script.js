@@ -30,7 +30,7 @@ function checkGuess() {
     guessInput.value = "";
 }
 
-function resetGame() {
+function restartGame() {
     secretNumber = Math.floor(Math.random() * 100) + 1;
     attempts = 0;
     document.getElementById("message").textContent = "";
