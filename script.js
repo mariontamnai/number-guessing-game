@@ -34,7 +34,7 @@ function resetGame() {
     secretNumber = Math.floor(Math.random() * 100) + 1;
     attempts = 0;
     document.getElementById("message").textContent = "";
-    document.getElementById("attempts").textContent = "Attempts: 0";
+    document.getElementById("attempts").textContent = "Attempts: 0 / ${maxAttempts}";
     document.getElementById("guess").value = "";
     document.getElementById("guess").disabled = false;
 }
