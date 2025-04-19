@@ -41,8 +41,3 @@ function restartGame() {
     document.getElementById("secret").textContent = "";
     document.getElementById("hint").textContent = ""
 }
-
-function revealNumber() {
-    document.getElementById("secret").textContent = `🤫 The secret number is: ${secretNumber}`;
-    document.getElementById("secret").style.color = "blue";
-}
