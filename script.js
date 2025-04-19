@@ -1,3 +1,5 @@
+const winSound = new Audio('right.wav');
+const wrongSound = new Audio('wrong.wav');
 let secretNumber = Math.floor(Math.random() * 100) + 1;
 let attempts = 0;
 let maxAttempts = 5;
@@ -14,18 +16,22 @@ function checkGuess() {
         message.textContent = `🎉 You got it right in ${attempts} tries! The number was ${secretNumber}.`;
         message.style.color = "green";
         document.getElementById("guess").disabled = true;
+        winSound.play();
         confetti();
     } else if (attempts >= maxAttempts) {
         message.textContent = `💔 You've used all your attempts! The number was ${secretNumber}.`;
         message.style.color = "red";
         document.getElementById("guess").disabled = true;
+        wrongSound.play();
     } else if (guess < secretNumber) {
         message.textContent = "📉 Too low! Try again.";
         message.style.color = "red";
+        //wrongSound.play();
     }
     else {
         message.textContent = "📈 Too high! Try again.";
         message.style.color = "red";
+        //wrongSound.play();
     }
     attemptsDisplay.textContent = `Attempts: ${attempts} / ${maxAttempts}`;
     guessInput.value = "";
