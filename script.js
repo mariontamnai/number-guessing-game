@@ -14,6 +14,7 @@ function checkGuess() {
         message.textContent = `🎉 You got it right in ${attempts} tries! The number was ${secretNumber}.`;
         message.style.color = "green";
         document.getElementById("guess").disabled = true;
+        confetti();
     } else if (attempts >= maxAttempts) {
         message.textContent = `💔 You've used all your attempts! The number was ${secretNumber}.`;
         message.style.color = "red";
